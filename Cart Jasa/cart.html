@@ -1,0 +1,144 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FIXUP</title>
+
+    <!-- Link Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Flaticon -->
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
+
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <!-- JS: Bootstrap + Custom Script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="styleco.css" />
+  </head>
+
+  <body>
+    <!-- NavBar Start  -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm" id="navbar">
+      <div class="container-fluid d-flex align-items-center">
+        <div class="d-flex align-items-center">
+          <div class="nav-brand">
+            <img class="logo" src="images/logo.png" alt="fixup-logo" />
+            <p class="logo-text">Legal Consultant</p>
+          </div>
+
+          <div class="d-flex align-items-center ms-3">
+            <span class="navbar-divider">|</span>
+            <span class="navbar-checkout">Checkout</span>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- NavBar End  -->
+
+    <!-- MAIN CONTENT -->
+    <div class="container my-5">
+      <div class="row g-4">
+        <!-- CUSTOMER INFO -->
+        <div class="col-lg-6 col-md-12">
+          <div class="box-section mb-4">
+            <div class="card-custom shadow-sm">
+              <h5 class="fw-bold mb-3">Informasi Pelanggan.</h5>
+
+              <label class="fw-semibold mb-1">Nama lengkap</label>
+              <input id="nama" type="text" class="form-control rounded-3" />
+            </div>
+          </div>
+
+          <!-- SHOPPING CART -->
+          <div class="box-section mb-4">
+            <div class="card-custom shadow-sm">
+              <h5 class="fw-bold mb-3">Keranjang Belanja.</h5>
+
+              <div class="d-flex align-items-center mb-3">
+                <div class="cart-icon-box">
+                  <i id="cart-icon"></i>
+                </div>
+                <div>
+                  <p id="jasa-nama" class="fw-semibold mb-1"></p>
+                  <p class="mb-1">Jumlah: 1</p>
+                  <a href="index.html" class="text-danger small">Hapus</a>
+                </div>
+              </div>
+
+              <div class="d-flex align-items-center mt-3">
+                <div id="jasa-harga" class="ms-auto fw-bold"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="button-wrapper">
+            <a href="index.html#here" class="btn btn-outline-primary rounded-pill px-4">
+              &lt; Lanjut Belanja
+            </a>
+          </div>
+        </div>
+
+        <!-- PAYMENT INFO -->
+        <div class="col-lg-6 col-md-12">
+          <div class="card shadow-sm p-3 rounded-4">
+            <h5 class="fw-bold mb-3">Informasi Pembayaran.</h5>
+
+            <p class="fw-semibold mb-1">No. Rekening:</p>
+
+            <div class="d-flex align-items-center justify-content-center mb-2">
+              <img src="images\bank.png" class="icon-check" />
+              <span id="norek" class="fs-6 fw-bold">1010014367013</span>
+            </div>
+            <p class="payment-notes d-flex justify-content-center">A.N. RUBEN RAY WOLFF</p>
+
+            <button class="btn btn-sm btn-outline-primary btn-copy" onclick="copyNorek()">
+              Salin
+            </button>
+
+            <p class="fw-semibold">Petunjuk:</p>
+            <p id="payment-notes" class="payment-notes"></p>
+
+            <button id="btn-konfirmasi" class="btn btn-primary w-100 mt-2 btn-confirm"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- POPUP CONFIRMATION -->
+    <div class="modal fade" id="popupKonfirmasi" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content text-center p-4 rounded-4">
+          <h4 class="fw-bold mb-3">Konfirmasi Pemesanan Jasa</h4>
+          <p class="text-muted mb-4">Apakah Anda yakin ingin melanjutkan?</p>
+
+          <div class="d-flex justify-content-between px-4 pb-2">
+            <button id="btn-belum" class="btn btn-outline-secondary w-50 me-2">Belum</button>
+            <button id="btn-ya" class="btn btn-primary w-50 ms-2">Iya</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js\scriptco.js"></script>
+  </body>
+</html>

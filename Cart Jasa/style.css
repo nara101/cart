@@ -1,0 +1,255 @@
+/* Global Styling */
+:root {
+  --primary1: #3299ed;
+  --primary2: #f2575f;
+  --nav-select: #f9272b;
+  --bg1: linear-gradient(to bottom, #c0e3f8, #fff7f7);
+  --bg2: linear-gradient(to bottom, #fff7f7, #c0e3f8);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+body {
+  background: var(--bg1);
+  color: #333;
+  font-family: "Inter", sans-serif;
+}
+
+h1,
+h2 {
+  font-family: "Lora", serif;
+}
+
+/* style Navbar start */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 3%;
+  z-index: 1000;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+header .logo {
+  width: 5rem;
+  height: auto;
+  display: block;
+}
+
+header .logo-text {
+  margin: 5px 0 0; /* jarak dari logo */
+  font-size: 0.6em; /* lebih kecil dari ukuran default */
+  line-height: 1; /* biar rapi */
+  font-weight: 500;
+}
+
+header .teks {
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-align: center;
+  flex-grow: 1;
+}
+
+header .profile-btn {
+  font-size: 1rem;
+  margin-right: 0.5rem;
+}
+
+header .profile-btn .btn {
+  border-radius: 0.25rem;
+  /* color: #fff; */
+  background-color: var(--primary1);
+  transition: background-color 0.3s ease;
+}
+
+header .profile-btn .btn:hover {
+  background-color: var(--primary2);
+}
+/* Style navbar end */
+
+/* header */
+#header-jasa {
+  position: relative;
+  height: 55vh; /* Sesuaikan tinggi agar lebih mudah terlihat */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+}
+
+#header-jasa {
+  background-image: url("images/img4.jpg");
+}
+
+.header-jasa .header-content {
+  position: absolute;
+  top: 78%;
+  transform: translate(-50%, -50%);
+  color: white;
+  padding: 20px;
+}
+
+.header-jasa .header-content {
+  left: 25%;
+}
+
+#header-jasa h1 {
+  font-size: 3rem;
+  font-family: "Lora", serif;
+  margin-bottom: 10px;
+}
+
+.keterangan p {
+  max-width: 700px;
+  word-wrap: break-word;
+}
+
+/* Card customization */
+.service-card {
+  border-radius: 12px;
+  border: 1px solid #e3e6ea;
+}
+
+.service-card .col {
+  justify-content: space-between;
+}
+
+.service-card .col .benefit-preview {
+  max-width: 600px;
+}
+
+/* Detail content animation */
+.service-card .col .detail-content {
+  max-width: 600px;
+  transition: 0.3s ease-in-out;
+}
+
+.btn-bottom-right {
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+}
+
+/* === Icon Circle === */
+.card-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  margin: 20px;
+  font-size: 40px;
+  transition: background-color 0.3s ease;
+  background-color: #3299ed;
+}
+
+.card-image i {
+  line-height: 1;
+  font-size: 3rem;
+}
+
+.card:hover .card-image {
+  background-color: #f2575f;
+}
+
+/* Responsive header*/
+
+@media (max-width: 1200px) {
+  .service-card .col .benefit-preview {
+    max-width: 400px;
+  }
+
+  .service-card .col .detail-content {
+    max-width: 400px;
+  }
+
+  .keterangan p {
+    max-width: 580px;
+    word-wrap: break-word;
+  }
+}
+
+@media (max-width: 992px) {
+  html {
+    font-size: 85%;
+  }
+
+  .header-jasa .header-content {
+    top: 80%;
+    left: 35%;
+  }
+
+  .card {
+    padding-bottom: 50px;
+  }
+
+  .service-card .col .benefit-preview {
+    max-width: 300px;
+  }
+
+  .service-card .col .detail-content {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    padding-bottom: 70px;
+  }
+
+  .card .detail-btn,
+  .card .co-btn {
+    position: static;
+    width: 100%;
+  }
+
+  .card .btn-bottom-right {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 576px) {
+  html {
+    font-size: 80%;
+  }
+
+  /* responsive card */
+  .card {
+    padding-bottom: 100px; /* beri ruang agar tombol tidak menimpa teks */
+  }
+
+  .card .detail-btn,
+  .card .co-btn {
+    position: static;
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  .card .btn-bottom-right {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 20px;
+  }
+
+  .keterangan p {
+    max-width: 400px;
+    word-wrap: break-word;
+  }
+}
