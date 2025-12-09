@@ -58,6 +58,7 @@ document.getElementById("btn-belum").addEventListener("click", function () {
 });
 
 // Shopping Cart & Payment Info
+// Shopping Cart & Payment Info
 document.addEventListener("DOMContentLoaded", function () {
 
     const jasa = localStorage.getItem("selected_jasa");
@@ -75,6 +76,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // icon dimasukkan sebagai HTML 
     document.getElementById("cart-icon").innerHTML = icon;
+
+
+    // === Data Bank berdasarkan kategori ===
+    const bankInfo = {
+        konsultasi: {
+            namaRekening: "A.N. Ruben Ray Wolff",
+            nomorRekening: "1010014367013",
+            logo: "images/mandirii.jpeg"
+        },
+        dp: {
+            namaRekening: "A.N. Arthur Laksmana Wolff",
+            nomorRekening: "5271590599",
+            logo: "images/bcaa.jpeg"
+        },
+        nodp: {
+            namaRekening: "A.N. Arthur Laksmana Wolff",
+            nomorRekening: "5271590599",
+            logo: "images/bcaa.jpeg"
+        }
+    };
 
 
     // === Template Pembayaran berdasarkan kategori ===
@@ -122,6 +143,20 @@ document.addEventListener("DOMContentLoaded", function () {
     if (tpl) {
         document.getElementById("payment-notes").innerHTML = tpl.notes;
         document.getElementById("btn-konfirmasi").textContent = tpl.buttonText;
+    }
+
+    // === Set informasi bank ===
+    if (bankInfo[category]) {
+        const bank = bankInfo[category];
+
+        document.getElementById("nama-rekening").textContent = bank.namaRekening;
+        document.getElementById("norek").textContent = bank.nomorRekening;
+
+        // Logo bank
+        const logoImg = document.getElementById("bank-logo");
+        if (logoImg) {
+            logoImg.src = bank.logo;
+        }
     }
 
 });
