@@ -99,30 +99,26 @@
         </div>
 
         <!-- PAYMENT INFO -->
-        <div class="col-lg-6 col-md-12">
-          <div class="card shadow-sm p-3 rounded-4">
-            <h5 class="fw-bold mb-3">Informasi Pembayaran.</h5>
+            <div class="col-lg-6 col-md-12">
+                <div class="card shadow-sm p-3 rounded-4">
+                    <h5 class="fw-bold mb-3">Informasi Pembayaran.</h5>
 
-            <p class="fw-semibold mb-1">No. Rekening:</p>
+                    <p class="fw-semibold mb-1">No. Rekening:</p>
 
-            <div class="d-flex align-items-center justify-content-center mb-2">
-              <img src="images\bank.png" class="icon-check" />
-              <span id="norek" class="fs-6 fw-bold">1010014367013</span>
+                    <div class="d-flex align-items-center justify-content-center mb-2">
+                        <img id="bank-logo" class="icon-check">
+                        <span id="norek" class="fs-6 fw-bold"></span>
+                    </div>
+                    <p id="nama-rekening" class="payment-notes d-flex justify-content-center"></p>
+
+                    <button class="btn btn-sm btn-outline-primary btn-copy" onclick="copyNorek()">Salin</button>
+
+                    <p class="fw-semibold">Petunjuk:</p>
+                    <p id="payment-notes" class="payment-notes"></p>
+
+                    <button id="btn-konfirmasi" class="btn btn-primary w-100 mt-2 btn-confirm"></button>
+                </div>
             </div>
-            <p class="payment-notes d-flex justify-content-center">A.N. RUBEN RAY WOLFF</p>
-
-            <button class="btn btn-sm btn-outline-primary btn-copy" onclick="copyNorek()">
-              Salin
-            </button>
-
-            <p class="fw-semibold">Petunjuk:</p>
-            <p id="payment-notes" class="payment-notes"></p>
-
-            <button id="btn-konfirmasi" class="btn btn-primary w-100 mt-2 btn-confirm"></button>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <!-- POPUP CONFIRMATION -->
     <div class="modal fade" id="popupKonfirmasi" tabindex="-1">
